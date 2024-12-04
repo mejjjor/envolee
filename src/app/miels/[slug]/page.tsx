@@ -5,17 +5,17 @@ import { RichText } from '@payloadcms/richtext-lexical/react'
 export default async function Home({
   params,
 }: {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }) {
-  const slug = await params.slug
+  const slug = (await params).slug
   const honey = await getHoney(slug)
 
   console.log("honey", honey)
 
   return (
     <>
-      <div>
-        titre: {honey.title}
+  <div>
+  titre: {honey.title}
         {
           honey.description &&
           <RichText data={honey.description} />
