@@ -780,6 +780,18 @@
   resolved "https://registry.yarnpkg.com/@nolyfill/is-core-module/-/is-core-module-1.0.39.tgz#3dc35ba0f1e66b403c00b39344f870298ebb1c8e"
   integrity sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==
 
+"@payloadcms/live-preview-react@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@payloadcms/live-preview-react/-/live-preview-react-3.3.0.tgz#9001ab7d1f471ffba059290539605962021bcb6c"
+  integrity sha512-cWvsVRnOAZWGsczJw8UPopPfguEfNV3jR+1A02OU3h839YoVT0M8ruYVeVn3QIopwW9YgQfUYIKAS2/8ozTEtw==
+  dependencies:
+    "@payloadcms/live-preview" "3.3.0"
+
+"@payloadcms/live-preview@3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@payloadcms/live-preview/-/live-preview-3.3.0.tgz#e5c3e48e60a681d03ffcfe94b507675495d8fe6d"
+  integrity sha512-bNbdCsJBaqlsD8UCuJdhEBjY+81wuAAXZzqi3ma4Sy50sQ/Oh2s3WOdUuLdTU0yA04G/1gDwKDnu72AeEVMDTw==
+
 "@payloadcms/richtext-lexical@^3.2.2":
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/@payloadcms/richtext-lexical/-/richtext-lexical-3.2.2.tgz#d2d361a02de8828ff1463b60448f44a08bd73ffd"
@@ -1860,7 +1872,7 @@ eslint-plugin-react-hooks@^5.0.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-5.0.0.tgz#72e2eefbac4b694f5324154619fee44f5f60f101"
   integrity sha512-hIOwI+5hYGpJEc4uPRmz2ulCjAGD/N13Lukkh8cLV0i2IRk/bdZDYjgLVHj+U9Z704kLIdIO6iueGvxNur0sgw==
 
-eslint-plugin-react@^7.35.0, eslint-plugin-react@^7.37.2:
+eslint-plugin-react@^7.35.0:
   version "7.37.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.37.2.tgz#cd0935987876ba2900df2f58339f6d92305acc7a"
   integrity sha512-EsTAnj9fLVr/GZleBLFbj/sSuXeWmp1eXIN60ceYnZveqEaUCyW4X+Vh4WTdUhCkW4xutXYqTXCUSyqD4rB75w==

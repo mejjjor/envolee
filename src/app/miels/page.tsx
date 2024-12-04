@@ -5,7 +5,7 @@ import Link from 'next/link'
 export default async function Home() {
   const honeys = await getHoneys()
 
-    
+    console.log("honeys", honeys)
   return (
     <>
       <div>
