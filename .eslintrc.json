@@ -4,6 +4,8 @@
   ],
   "rules": {
     "react-hooks/exhaustive-deps": "off",
+    "react/jsx-indent": ["error", 2], // Enforce 2 spaces for JSX indentation
+    "react/jsx-indent-props": ["error", 2], // Enforce 2 spaces for props
     "indent": [
       "error",
       2,

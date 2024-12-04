@@ -8,7 +8,6 @@ export default async function Home() {
     
   return (
     <>
-  COUCOU
       <div>
         {
           honeys.docs.map((honey) => {

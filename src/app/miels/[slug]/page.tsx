@@ -15,7 +15,7 @@ export default async function Home({
   return (
     <>
       <div>
-    titer: {honey.title}
+        titre: {honey.title}
         {
           honey.description &&
           <RichText data={honey.description} />
