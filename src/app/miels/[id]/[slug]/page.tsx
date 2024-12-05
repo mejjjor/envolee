@@ -6,14 +6,13 @@ export default async function Home({
   params,
   searchParams
 }: {
-    params: Promise<{ slug: string }>
-    searchParams: Promise<{ isDraft: boolean }>
+    params: Promise<{ slug: string, id: string }>
+    searchParams: Promise<{ draft: boolean }>
 }) {
-  const slug = (await params).slug
-  const isDraft = (await searchParams).isDraft
-  const honey = await getHoney(slug, isDraft)
-
-  console.log("honey", honey)
+  
+  const id = (await params).id
+  const isDraft = (await searchParams).draft
+  const honey = await getHoney(id, isDraft)
 
   return (
     <>

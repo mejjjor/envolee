@@ -102,8 +102,9 @@ export interface Media {
  * via the `definition` "honeys".
  */
 export interface Honey {
+  id: number;
   title: string;
-  id: string;
+  slug: string;
   description?: {
     root: {
       type: string;
@@ -150,7 +151,7 @@ export interface PayloadLockedDocument {
       } | null)
     | ({
         relationTo: 'honeys';
-        value: string | Honey;
+        value: number | Honey;
       } | null)
     | ({
         relationTo: 'flowers';
@@ -237,7 +238,7 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface HoneysSelect<T extends boolean = true> {
   title?: T;
-  id?: T;
+  slug?: T;
   description?: T;
   flowers?: T;
   updatedAt?: T;

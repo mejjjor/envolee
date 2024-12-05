@@ -11,7 +11,7 @@ export default async function Home() {
       <div>
         {
           honeys.docs.map((honey) => {
-            return <Link key={honey.id} href={`/miels/${honey.id}`}>{honey.title}</Link>
+            return <Link key={honey.id} href={`/miels/${honey.id}/${honey.slug}`}>{honey.title}</Link>
           })
         }
       </div>
