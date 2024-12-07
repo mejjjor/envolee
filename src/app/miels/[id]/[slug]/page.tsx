@@ -1,6 +1,9 @@
 import { RefreshRouteOnSave } from '@/src/components/RefreshRouterOnSave'
 import { getHoney } from '@/src/api';
 import { RichText } from '@payloadcms/richtext-lexical/react'
+import { permanentRedirect } from 'next/navigation'
+import { routes } from '@/src/routes';
+
 
 export default async function Home({
   params,
@@ -10,9 +13,13 @@ export default async function Home({
     searchParams: Promise<{ draft: boolean }>
 }) {
   
-  const id = (await params).id
-  const isDraft = (await searchParams).draft
+  const {id, slug} = await params
+  const {draft: isDraft} = await searchParams
   const honey = await getHoney(id, isDraft)
+
+  if (honey.slug !== slug) {
+    permanentRedirect(`${routes.honeys}/${id}/${honey.slug}`)
+  }
 
   return (
     <>

@@ -1,6 +1,7 @@
 import { cn } from '@/src/utils/cn';
 import { Architects_Daughter } from 'next/font/google'
 import Link from 'next/link';
+import { routes } from '@/src/routes';
 
 const architectsDaughter = Architects_Daughter({
   weight: "400",
@@ -14,7 +15,7 @@ export default function Home() {
   <h1 className={cn(architectsDaughter.className, "text-7xl sm:text-8xl text-center")}>L&apos;envolée</h1>
   </header>
   <nav className='sm:m-4 flex justify-around'>
-  <Link href="/miels">Miels</Link>
+  <Link href={routes.honeys}>Miels</Link>
     <a href="#miels">Les miels</a>|
     <a href="#apiculteur">Être apiculteur</a>|
     <a href="#formation">Formation</a>|
