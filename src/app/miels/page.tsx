@@ -1,20 +1,26 @@
 import { getHoneys } from '@/src/api'
 import Link from 'next/link'
 
-// export const dynamic = 'force-dynamic'; 
-export const revalidate = 60
+export const dynamic = 'force-dynamic';
+// export const revalidate = 60
+// export const experimental_ppr = true
+
 
 export default async function Home() {
   const honeys = await getHoneys()
 
   return (
     <>
-      <div>
+      <ul>
         {
           honeys.docs.map((honey) => {
-            return <Link key={honey.id} href={`/miels/${honey.id}/${honey.slug}`}>{honey.title}</Link>
+            return (
+              <li key={honey.id}>
+                <Link  href={`/miels/${honey.id}/${honey.slug}`}>{honey.title}</Link>
+              </li>
+              )
           })
         }
-      </div>
+      </ul>
     </>
   )}
