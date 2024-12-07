@@ -1,9 +1,19 @@
 import { RefreshRouteOnSave } from '@/src/components/RefreshRouterOnSave'
-import { getHoney } from '@/src/api';
+import { getHoney, getHoneys } from '@/src/api';
 import { RichText } from '@payloadcms/richtext-lexical/react'
 import { permanentRedirect } from 'next/navigation'
 import { routes } from '@/src/routes';
 
+export async function generateStaticParams() {
+  const honeys = await getHoneys()
+
+  const data = honeys.docs.map((honey) => ({
+    id: String(honey.id),
+    slug: honey.slug,
+  }))
+
+  return data
+}
 
 export default async function Home({
   params,
