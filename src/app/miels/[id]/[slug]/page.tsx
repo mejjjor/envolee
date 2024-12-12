@@ -1,11 +1,14 @@
 import { RefreshRouteOnSave } from '@/src/components/RefreshRouterOnSave'
-import { getHoney, getHoneys } from '@/src/api';
 import { RichText } from '@payloadcms/richtext-lexical/react'
 import { permanentRedirect } from 'next/navigation'
 import { routes } from '@/src/routes';
+import { getServices } from '@/src/services';
 
 export async function generateStaticParams() {
-  const honeys = await getHoneys()
+
+  const { honeyAPI } = getServices();
+  
+  const honeys = await honeyAPI.getHoneys()
 
   const data = honeys.docs.map((honey) => ({
     id: String(honey.id),
@@ -22,10 +25,12 @@ export default async function Home({
     params: Promise<{ slug: string, id: string }>
     searchParams: Promise<{ draft: boolean }>
 }) {
+
+  const { honeyAPI } = getServices();
   
   const {id, slug} = await params
   const {draft: isDraft} = await searchParams
-  const honey = await getHoney(id, isDraft)
+  const honey = await honeyAPI.getHoney(id, isDraft)
 
   if (honey.slug !== slug) {
     permanentRedirect(`${routes.honeys}/${id}/${honey.slug}`)
@@ -38,7 +43,7 @@ export default async function Home({
     <RefreshRouteOnSave/>
     }
   <div>
-  titre: {honey.title}
+    titre: {honey.title}
         {
           honey.description &&
           <RichText data={honey.description} />

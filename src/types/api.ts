@@ -1,3 +1,5 @@
+import { Honey } from "@/src/types/payloadcms";
+
 export interface PayloadAPIResponse<T> {
     docs: T[];
     totalDocs: number;
@@ -9,4 +11,9 @@ export interface PayloadAPIResponse<T> {
     hasNextPage: boolean;
     prevPage: number | null;
     nextPage: number | null;
+  }
+
+  export interface HoneyAPI {
+    getHoneys: () => Promise<PayloadAPIResponse<Honey>>
+    getHoney(id: string, isDraft?: boolean): Promise<Honey> 
   }

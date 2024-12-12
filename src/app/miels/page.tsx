@@ -1,4 +1,4 @@
-import { getHoneys } from '@/src/api'
+import { getServices } from '@/src/services';
 import Link from 'next/link'
 
 export const dynamic = 'force-dynamic';
@@ -7,7 +7,10 @@ export const dynamic = 'force-dynamic';
 
 
 export default async function Home() {
-  const honeys = await getHoneys()
+  const { honeyAPI } = getServices();
+
+  
+  const honeys = await honeyAPI.getHoneys()
 
   return (
     <>
