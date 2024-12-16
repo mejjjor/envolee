@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/legacy/image";
 import logoBio from "@/public/logo_bio.jpg";
 
 export default function Honey({

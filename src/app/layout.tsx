@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Poppins } from "next/font/google";
-import Image from "next/image";
+import Image from "next/legacy/image";
 // import acceuil from "@/public/acceuil.jpg"
 // import miels from "@/public/miels.jpg"
 import logo from "@/public/logo.png";

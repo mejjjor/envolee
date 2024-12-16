@@ -1,6 +1,6 @@
 // import { cn } from '@/src/utils/cn';
 // import { Architects_Daughter } from 'next/font/google'
-import Image from "next/image";
+import Image from "next/legacy/image";
 // import acceuil from "@/public/acceuil.jpg"
 // import miels from "@/public/miels.jpg"
 import pot from "@/public/pot.jpg";
