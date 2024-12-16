@@ -34,14 +34,14 @@ export default function RootLayout({
             <Image
               src={logo}
               alt="logo lenvolé"
-              layout="fill"
+              layout="intrinsic"
               className="absolute object-contain"
             />
             <div>
               <Image
                 src={nuee}
                 alt="nuee lenvolé"
-                layout="fill"
+                layout="intrinsic"
                 className="absolute object-contain animate-fly"
               />
             </div>
