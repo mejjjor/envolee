@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Questrial } from "next/font/google";
+import { Poppins } from "next/font/google";
 import Image from "next/image";
 // import acceuil from "@/public/acceuil.jpg"
 // import miels from "@/public/miels.jpg"
@@ -8,9 +8,10 @@ import logo from "@/public/logo.png";
 import nuee from "@/public/nuee.png";
 import Nav from "./Nav";
 
-const questrial = Questrial({
-  weight: "400",
+const poppins = Poppins({
   subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "600"],
 });
 
 export const metadata: Metadata = {
@@ -26,24 +27,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${questrial.className} antialiased h-screen overflow-x-hidden`}
+        className={`${poppins.className} antialiased h-screen overflow-x-hidden`}
       >
         <header className="h-[300px] pt-4 flex justify-center z-0">
           <div className="relative h-[300px] w-[600px]">
             <Image
               src={logo}
               alt="logo lenvolé"
-              objectFit="contain"
               layout="fill"
-              className="absolute"
+              className="absolute object-contain"
             />
             <div>
               <Image
                 src={nuee}
                 alt="nuee lenvolé"
-                objectFit="contain"
                 layout="fill"
-                className="absolute animate-fly"
+                className="absolute object-contain animate-fly"
               />
             </div>
           </div>
