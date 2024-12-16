@@ -4,31 +4,30 @@ import { Services } from "@/src//types/services";
 import honeyAPI from "@/src/api";
 import { HoneyAPI, PayloadAPIResponse } from "@/src/types/api";
 
-
 export function honeyAPIBuilder() {
-    return StrictBuilder<HoneyAPI>()
+  return StrictBuilder<HoneyAPI>()
     .getHoneys(honeyAPI.getHoneys)
-    .getHoney(honeyAPI.getHoney)
+    .getHoney(honeyAPI.getHoney);
 }
 
 export function serviceInjectionBuilder() {
-    return StrictBuilder<Services>()
-    .honeyAPI(honeyAPIBuilder().build())
+  return StrictBuilder<Services>().honeyAPI(honeyAPIBuilder().build());
 }
 
 export function stubHoneyBuilder() {
-    return StrictBuilder<Honey>()
+  return StrictBuilder<Honey>()
     .id(1)
     .title("Miel_1")
+    .tag("dddd")
     .slug("miel_1")
     .createdAt("2024-12-12T01:06:26.114Z")
     .updatedAt("2024-12-12T01:06:26.114Z")
     .description(null)
-    .flowers([])
+    .flowers([]);
 }
 
 export function stubPayloadcmsBuilder<T>() {
-    return StrictBuilder<PayloadAPIResponse<T>>()
+  return StrictBuilder<PayloadAPIResponse<T>>()
     .docs([])
     .totalDocs(10)
     .limit(10)
@@ -38,5 +37,5 @@ export function stubPayloadcmsBuilder<T>() {
     .hasPrevPage(false)
     .hasNextPage(false)
     .prevPage(null)
-    .nextPage(null)
+    .nextPage(null);
 }

@@ -4,9 +4,10 @@ import { permanentRedirect } from 'next/navigation'
 import { routes } from '@/src/routes';
 import { getServices } from '@/src/services';
 
+
 export async function generateStaticParams() {
 
-  const { honeyAPI } = getServices();
+  const { honeyAPI } = getServices()
   
   const honeys = await honeyAPI.getHoneys()
 

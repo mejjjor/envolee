@@ -7,10 +7,10 @@ import { getStubHoneysAPI } from '@/src/services/helpers'
 import Page from './page'
  
 test('Page', async () => {
-    injectServices("honeyAPI", getStubHoneysAPI([stubHoneyBuilder().build()]))
+    injectServices("honeyAPI", getStubHoneysAPI([stubHoneyBuilder().title("toto").build()]))
     const Result = await Page()
 
   render(Result)
   
-  expect(screen.getByText('Miel_1')).toBeDefined()
+  expect(screen.getByText('toto')).toBeDefined()
 })

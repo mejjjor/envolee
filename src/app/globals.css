@@ -4,9 +4,13 @@
 
 :root {
   --background: #f3f3eb;
-  --foreground: #31312f;
-}
+  /* --background: #f4f4e3; */
 
+  --foreground: #31312f;
+  /* --primary-color: #d3a130; */
+  --primary-color: #ebbc0c7d;
+  --secondary-color: #1cb38a;
+}
 
 body {
   color: var(--foreground);

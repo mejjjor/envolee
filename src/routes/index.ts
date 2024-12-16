@@ -1,3 +1,4 @@
 export const routes = {
-    honeys: "/miels"
-}
+  home: "/",
+  honeys: "/miels",
+};
