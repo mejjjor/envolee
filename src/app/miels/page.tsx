@@ -2,9 +2,12 @@
 // import Link from 'next/link'
 import pot from "@/public/pot.jpg";
 import acaccia from "@/public/acaccia.jpg";
+import miels from "@/public/miels.jpg";
 import hm from "@/public/hm.jpg";
 
 import Honey from "@/src/components/Honey";
+import Hero from "@/src/components/Hero";
+import Image from "next/image";
 
 // export const dynamic = 'force-dynamic';
 export const revalidate = 60;
@@ -21,8 +24,8 @@ export default async function Home() {
       title: "Acaccia",
       picture: acaccia,
       pictureAlt: "pot de miel d'acaccia",
-      weight: "500g",
-      price: "10€",
+      weight: "500 g",
+      price: "10 €",
       flowers: ["acaccia"],
     },
     {
@@ -30,8 +33,35 @@ export default async function Home() {
       title: "Haute-montagne",
       picture: hm,
       pictureAlt: "pot de miel d'acaccia",
-      weight: "500g",
-      price: "10€",
+      weight: "500 g",
+      price: "10 €",
+      flowers: ["rhododendron"],
+    },
+    {
+      id: "32",
+      title: "Printemps",
+      picture: pot,
+      pictureAlt: "pot de miel d'acaccia",
+      weight: "500 g",
+      price: "10 €",
+      flowers: ["nectar de Ronce", "miellat de chêne", "tilleul"],
+    },
+    {
+      id: "12",
+      title: "Acaccia",
+      picture: acaccia,
+      pictureAlt: "pot de miel d'acaccia",
+      weight: "500 g",
+      price: "10 €",
+      flowers: ["acaccia"],
+    },
+    {
+      id: "22",
+      title: "Haute-montagne",
+      picture: hm,
+      pictureAlt: "pot de miel d'acaccia",
+      weight: "500 g",
+      price: "10 €",
       flowers: ["rhododendron"],
     },
     {
@@ -39,15 +69,46 @@ export default async function Home() {
       title: "Printemps",
       picture: pot,
       pictureAlt: "pot de miel d'acaccia",
-      weight: "500g",
-      price: "10€",
+      weight: "500 g",
+      price: "10 €",
+      flowers: ["nectar de Ronce", "miellat de chêne", "tilleul"],
+    },
+    {
+      id: "11",
+      title: "Acaccia",
+      picture: acaccia,
+      pictureAlt: "pot de miel d'acaccia",
+      weight: "500 g",
+      price: "10 €",
+      flowers: ["acaccia"],
+    },
+    {
+      id: "21",
+      title: "Haute-montagne",
+      picture: hm,
+      pictureAlt: "pot de miel d'acaccia",
+      weight: "500 g",
+      price: "10 €",
+      flowers: ["rhododendron"],
+    },
+    {
+      id: "31",
+      title: "Printemps",
+      picture: pot,
+      pictureAlt: "pot de miel d'acaccia",
+      weight: "500 g",
+      price: "10 €",
       flowers: ["nectar de Ronce", "miellat de chêne", "tilleul"],
     },
   ];
 
   return (
-    <div className="flex gap-2 sm:gap-6 flex-wrap sm:mt-8">
-      {/* <ul>
+    <>
+      <Hero>
+        <Image src={miels} className="object-cover" alt="miels" />
+      </Hero>
+      <div className="flex gap-2 sm:gap-16 flex-wrap sm:mt-8 justify-center">
+        {/* <ul>
         {
           honeys.docs.map((honey) => {
             return (
@@ -58,18 +119,18 @@ export default async function Home() {
           })
         }
       </ul> */}
-      {honeys.map((honey) => (
-        <Honey
-          key={honey.id}
-          title={honey.title}
-          picture={honey.picture}
-          pictureAlt={honey.pictureAlt}
-          weight={honey.weight}
-          price={honey.price}
-          flowers={honey.flowers}
-        />
-      ))}
-      {/* <div className="p-1 sm:p-2 w-[320px] h-[400px] rounded-lg flex flex-col bg-primary/70">
+        {honeys.map((honey) => (
+          <Honey
+            key={honey.id}
+            title={honey.title}
+            picture={honey.picture}
+            pictureAlt={honey.pictureAlt}
+            weight={honey.weight}
+            price={honey.price}
+            flowers={honey.flowers}
+          />
+        ))}
+        {/* <div className="p-1 sm:p-2 w-[320px] h-[400px] rounded-lg flex flex-col bg-primary/70">
         <div className="flex">
           <div>
             <div className="max-w-[170px] max-h-[300px] flex items-center justify-center rounded-lg overflow-hidden">
@@ -175,6 +236,7 @@ export default async function Home() {
           </div>
         </div>
       </div> */}
-    </div>
+      </div>
+    </>
   );
 }

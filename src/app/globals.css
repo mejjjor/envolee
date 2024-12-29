@@ -10,10 +10,11 @@
   /* --primary-color: #d3a130; */
   /* --primary-color: rgb(233, 185, 12, 0.5); */
   /* --primary-color: #ebbc0c7d; */
-  --primary-color: rgb(253, 222, 107);
+  --primary-color: #fdde6b;
   /* --secondary-color: #1cb38a; */
   --primary-color-rgb: 253, 222, 107; /* Replace with RGB equivalent  */
   --secondary-color-rgb: 28, 179, 138; /* Replace with RGB equivalent */
+  --accent-color-rgb: 235, 192, 50;
 }
 
 body {

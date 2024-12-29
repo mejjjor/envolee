@@ -22,6 +22,7 @@ export default {
         foreground: "var(--foreground)",
         primary: withOpacityValue("--primary-color-rgb"),
         secondary: withOpacityValue("--secondary-color-rgb"),
+        accent: withOpacityValue("--accent-color-rgb"),
       },
     },
 
