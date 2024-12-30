@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { routes } from "@/src/routes";
-import { FC } from "react";
+import { useRef } from "react";
 import { cn } from "@/src/utils/cn";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -35,18 +35,18 @@ const navData = [
 
 export default function Nav() {
   const pathname = usePathname();
-  const activeLink = getActiveLink(pathname);
+
   const currentRoute = navData.find((navData) => navData.href === pathname);
 
+  const activeLinkRef = useRef<HTMLAnchorElement>(null);
   const [barStyle, setBarStyle] = useState({
-    width: activeLink?.offsetWidth ?? 0,
-    left: activeLink?.offsetLeft ?? 0,
+    width: activeLinkRef.current?.offsetWidth ?? 0,
+    left: activeLinkRef.current?.offsetLeft ?? 0,
   });
 
   useEffect(() => {
-    const activeLink = getActiveLink(pathname);
-    if (activeLink) {
-      const { offsetWidth, offsetLeft } = activeLink;
+    if (activeLinkRef.current) {
+      const { offsetWidth, offsetLeft } = activeLinkRef.current;
       setBarStyle({ width: offsetWidth, left: offsetLeft });
     }
   }, [pathname]);
@@ -67,34 +67,20 @@ export default function Nav() {
         }}
       />
       {navData.map((data) => (
-        <NavLink
-          key={data.label + data.href}
-          label={data.label}
+        <Link
+          key={data.href}
           href={data.href}
-          highlight={data.highlight}
-        />
+          ref={pathname === data.href ? activeLinkRef : null}
+          className={cn(
+            "px-6 flex whitespace-nowrap justify-center items-center",
+            {
+              "bg-accent rounded-lg": data.highlight,
+            }
+          )}
+        >
+          {data.label}
+        </Link>
       ))}
     </nav>
   );
 }
-
-const NavLink: FC<{ label: string; href: string; highlight?: boolean }> = ({
-  label,
-  href,
-  highlight,
-}) => {
-  return (
-    <Link
-      href={href}
-      className={cn("px-6 flex whitespace-nowrap justify-center items-center", {
-        "bg-accent rounded-lg": highlight,
-      })}
-    >
-      {label}
-    </Link>
-  );
-};
-
-const getActiveLink = (pathname: string): HTMLElement | null => {
-  return document.querySelector(`a[href="${pathname}"]`);
-};
