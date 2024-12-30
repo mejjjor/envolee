@@ -6,7 +6,11 @@ const Footer = () => {
     <footer className="bg-white p-12 w-full">
       <div className="flex flex-row justify-between">
         <div>
-          <Image src={logo} width="100" alt="logo de l'envolée" />
+          <Image
+            src={logo}
+            className="w-[100] h-auto"
+            alt="logo de l'envolée"
+          />
           <div>Indi Oyarzun</div>
           <div>1 chemin de le brune, 09230 Mercenac</div>
         </div>

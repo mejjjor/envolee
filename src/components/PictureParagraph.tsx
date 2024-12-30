@@ -5,32 +5,28 @@ const PictureParagraph: FC<{
   src: string | StaticImageData;
   alt: string;
   position?: "left" | "right";
-  title?: string;
   children: ReactElement;
-}> = ({ children, src, alt, position = "left", title }) => {
+}> = ({ children, src, alt, position = "left" }) => {
   return (
-    <>
-      {title && (
-        <div className="mt-8 mb-6 inline-block">
-          <h2 className="text-3xl whitespace-nowrap">{title}</h2>
-          <div className="w-[80%] h-2 bg-secondary rounded-md m-2 ml-0" />
+    <div className="flex gap-16 my-16">
+      {position === "right" && <ChildrenWrapper>{children}</ChildrenWrapper>}
+      <div className="w-[50%] flex items-center">
+        <div className="rounded-xl overflow-hidden max-h-[400px] flex ">
+          <Image
+            src={src}
+            alt={alt}
+            className="object-contain self-center w-auto"
+            priority
+          />
         </div>
-      )}
-      <div className="flex gap-16">
-        {position === "right" && <ChildrenWrapper>{children}</ChildrenWrapper>}
-        <div className="w-[50%] flex items-center">
-          <div className="rounded-xl overflow-hidden">
-            <Image src={src} alt={alt} className="object-contain" />
-          </div>
-        </div>
-        {position === "left" && <ChildrenWrapper>{children}</ChildrenWrapper>}
       </div>
-    </>
+      {position === "left" && <ChildrenWrapper>{children}</ChildrenWrapper>}
+    </div>
   );
 };
 
 const ChildrenWrapper: FC<PropsWithChildren> = ({ children }) => {
-  return <div className="w-[50%]">{children}</div>;
+  return <div className="w-[50%] flex self-center">{children}</div>;
 };
 
 export default PictureParagraph;

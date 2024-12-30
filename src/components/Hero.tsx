@@ -1,8 +1,17 @@
-import { FC, PropsWithChildren } from "react";
+import { FC, ReactElement } from "react";
+import { cn } from "../utils/cn";
 
-const Hero: FC<PropsWithChildren> = ({ children }) => {
+const Hero: FC<{ className?: string; children: ReactElement }> = ({
+  children,
+  className,
+}) => {
   return (
-    <div className="h-96 my-16 flex justify-center bg-white rounded-3xl shadow-sm overflow-hidden">
+    <div
+      className={cn(
+        "h-96 mb-16 flex justify-center bg-white rounded-3xl shadow-sm",
+        className
+      )}
+    >
       {children}
     </div>
   );

@@ -31,27 +31,37 @@ export default {
     },
     keyframes: {
       fly: {
-        "0%": { opacity: "0" },
-        "30%": { opacity: "1" },
+        "0%": { opacity: "0", zIndex: 0 },
+        "30%": { opacity: "1", zIndex: 30 },
         "31%": {
           opacity: "1",
           filter: "blur(0px)",
           transform: "scale(1) translate(0, 0) skew(0, 0)",
+          zIndex: 30,
         },
         "85%": {
           opacity: "0",
           filter: "blur(7px)",
           transform: "scale(2) translate(30px, 0) skew(20deg, -20deg)",
+          zIndex: 30,
         },
         "86%": {
           opacity: "0",
           filter: "blur(0px)",
           transform: "scale(1) translate(0, 0) skew(0, 0)",
+          zIndex: 30,
         },
-        "100%": {
+        "87%": {
+          opacity: "0",
+          filter: "blur(0px)",
+          transform: "scale(1) translate(0, 0) skew(0, 0)",
+          zIndex: 0,
+        },
+        "200%": {
           opacity: "1",
           filter: "blur(0px)",
           transform: "scale(1) translate(0, 0) skew(0, 0)",
+          zIndex: 0,
         },
       },
     },

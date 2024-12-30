@@ -13,19 +13,21 @@ const Logo: FC<{
   withAnimate?: boolean;
 }> = ({ className, logoClassName, withSub, withAnimate }) => {
   return (
-    <div className={cn("flex z-0 w-full", className)}>
+    <div className={cn("flex w-full", className)}>
       <div className={cn("relative", logoClassName)}>
         <Image
           src={withSub ? logoSub : logo}
           alt="logo lenvolé"
-          className="absolute object-contain"
+          className="absolute object-contain h-auto w-full"
+          priority
         />
         <Image
           src={nuee}
           alt="nuee lenvolé"
-          className={cn("absolute object-contain", {
+          className={cn("absolute object-contain h-auto w-full", {
             "animate-fly": withAnimate,
           })}
+          priority
         />
       </div>
     </div>

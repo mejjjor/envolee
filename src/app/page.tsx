@@ -4,6 +4,7 @@ import Hero from "@/src/components/Hero";
 import PictureParagraph from "@/src/components/PictureParagraph";
 
 import accueil from "@/public/acceuil.jpg";
+import Title from "../components/Title";
 // const architectsDaughter = Architects_Daughter({
 //   weight: "400",
 //   subsets: ["latin"]
@@ -20,12 +21,8 @@ export default function Home() {
           logoClassName="w-[650px]"
         />
       </Hero>
-      <PictureParagraph
-        src={accueil}
-        alt="accueil"
-        position="right"
-        title="Etre apiculteur"
-      >
+      <Title>Etre apiculteur</Title>
+      <PictureParagraph src={accueil} alt="accueil" position="right">
         <div>
           L&apos;envolée est née en 2021 suite à une envie de faire de ma
           passion mon métier. L&apos;activité principale de l&apos;entreprise

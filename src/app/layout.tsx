@@ -37,7 +37,7 @@ export default async function RootLayout({
       <body
         className={`${poppins.className} antialiased grid grid-rows-[1fr_auto] min-h-screen overflow-x-hidden`}
       >
-        <div className="p-12 pb-48 mx-auto w-screen">
+        <div className="p-12 pb-32 mx-auto w-screen">
           <div className="max-w-[1350px] mx-auto">
             <Header pathname={currentPathname} />
             <main>{children}</main>
