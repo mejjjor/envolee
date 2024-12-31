@@ -8,25 +8,28 @@ const PictureParagraph: FC<{
   children: ReactElement;
 }> = ({ children, src, alt, position = "left" }) => {
   return (
-    <div className="flex gap-16 my-16">
+    <div className="my-8 flex flex-col gap-8 lg:my-16 lg:flex-row lg:gap-16">
       {position === "right" && <ChildrenWrapper>{children}</ChildrenWrapper>}
-      <div className="w-[50%] flex items-center">
-        <div className="rounded-xl overflow-hidden max-h-[400px] flex ">
+      <div className="flex items-center lg:w-[50%]">
+        <div className="flex max-h-[400px] overflow-hidden rounded-xl">
           <Image
             src={src}
             alt={alt}
-            className="object-contain self-center w-auto"
+            className="w-auto self-center object-contain"
             priority
           />
         </div>
       </div>
+      <div className="flex self-center lg:hidden">{children}</div>
       {position === "left" && <ChildrenWrapper>{children}</ChildrenWrapper>}
     </div>
   );
 };
 
 const ChildrenWrapper: FC<PropsWithChildren> = ({ children }) => {
-  return <div className="w-[50%] flex self-center">{children}</div>;
+  return (
+    <div className="hidden self-center lg:flex lg:w-[50%]">{children}</div>
+  );
 };
 
 export default PictureParagraph;

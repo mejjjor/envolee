@@ -26,7 +26,7 @@ export default function Courses() {
         </div>
         <Form action={submitForm} className="flex flex-col">
           <div className="flex flex-col">
-            <div className="flex gap-4 box-content">
+            <div className="box-content flex gap-4">
               <Input label="Nom" id="name" placeholder="Votre nom" />
               <Input label="Prénom" id="surname" placeholder="Votre prénom" />
             </div>
@@ -39,7 +39,7 @@ export default function Courses() {
             />
           </div>
           <button
-            className="mt-4 p-4 flex justify-center items-center self-start bg-accent rounded-lg"
+            className="mt-4 flex items-center justify-center self-start rounded-lg bg-accent p-4"
             type="submit"
           >
             Envoyer !
@@ -61,7 +61,7 @@ const Input: FC<{
       <label htmlFor={id}>{label} :</label>
       {type === "textarea" && (
         <textarea
-          className="my-2 p-2 bg-accent/30 w-full"
+          className="my-2 w-full bg-accent/30 p-2"
           id={id}
           placeholder={placeholder ?? label}
           rows={7}
@@ -69,7 +69,7 @@ const Input: FC<{
       )}
       {type === "text" && (
         <input
-          className="my-2 p-2 bg-accent/30 w-full"
+          className="my-2 w-full bg-accent/30 p-2"
           id={id}
           type={type}
           placeholder={placeholder ?? label}

@@ -18,7 +18,7 @@ export default function Home() {
           withSub
           withAnimate
           className="justify-center"
-          logoClassName="w-[650px]"
+          logoClassName="w-full h-60 lg:h-96"
         />
       </Hero>
       <Title>Etre apiculteur</Title>

@@ -3,12 +3,12 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-white p-12 w-full">
+    <footer className="w-full bg-white p-12">
       <div className="flex flex-row justify-between">
         <div>
           <Image
             src={logo}
-            className="w-[100] h-auto"
+            className="h-auto w-[100]"
             alt="logo de l'envolée"
           />
           <div>Indi Oyarzun</div>

@@ -118,7 +118,7 @@ export default async function Home() {
       <Hero className="overflow-hidden">
         <Image
           src={miels}
-          className="object-cover h-auto w-full"
+          className="h-auto w-full object-cover"
           priority
           alt="miels"
         />

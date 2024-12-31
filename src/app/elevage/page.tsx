@@ -14,7 +14,7 @@ export default async function Courses() {
       <Hero className="overflow-hidden">
         <Image
           src={elevage}
-          className="object-cover h-auto w-full"
+          className="h-auto w-full object-cover"
           priority
           alt="miels"
         />
@@ -27,7 +27,7 @@ export default async function Courses() {
           velit lacinia molestie. Etiam turpis diam, congue non tortor ut,
           feugiat convallis neque. Nulla pre.
           <br />
-          <div className="inline-block p-2 px-4 rounded-lg bg-accent/40 cursor-pointer">
+          <div className="inline-block cursor-pointer rounded-lg bg-accent/40 p-2 px-4">
             Prix: 20€
           </div>
         </div>

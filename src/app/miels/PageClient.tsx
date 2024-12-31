@@ -19,13 +19,16 @@ const HoneysClient: FC<{
   return (
     <>
       <div>
-        <div className="text-xl mt-2 mb-4">Filtrer par fleurs :</div>
-        <div className="flex gap-2">
+        <div className="mb-4 mt-2 lg:text-xl">Filtrer par fleurs :</div>
+        <div className="mb-8 flex flex-wrap gap-2">
           {flowers.map((flower) => (
             <div
-              className={cn("p-2 px-4 rounded-lg bg-accent/40 cursor-pointer", {
-                "bg-accent/70": flower === currentFilter,
-              })}
+              className={cn(
+                "cursor-pointer rounded-lg bg-accent/40 p-2 px-4 text-xs lg:text-sm",
+                {
+                  "bg-accent/70": flower === currentFilter,
+                },
+              )}
               key={flower}
               onClick={() => {
                 setCurrentFilter(flower);
@@ -37,12 +40,12 @@ const HoneysClient: FC<{
         </div>
       </div>
 
-      <div className="flex gap-2 sm:gap-16 flex-wrap sm:mt-8 justify-center">
+      <div className="flex flex-wrap justify-center gap-8 sm:mt-8 sm:gap-16">
         {honeys.docs
           .filter(
             (honey) =>
               currentFilter === "Toutes" ||
-              honey.flowers?.includes(currentFilter)
+              honey.flowers?.includes(currentFilter),
           )
           .map((honey) => (
             <Honey

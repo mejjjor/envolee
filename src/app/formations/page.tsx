@@ -16,7 +16,7 @@ export default async function Courses() {
       <Hero className="overflow-hidden">
         <Image
           src={course}
-          className="object-cover h-auto w-full"
+          className="h-auto w-full object-cover"
           alt="miels"
         />
       </Hero>
