@@ -18,7 +18,6 @@ export function stubHoneyBuilder() {
   return StrictBuilder<Honey>()
     .id(1)
     .title("Miel_1")
-    .tag("dddd")
     .slug("miel_1")
     .createdAt("2024-12-12T01:06:26.114Z")
     .updatedAt("2024-12-12T01:06:26.114Z")
