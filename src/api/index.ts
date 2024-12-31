@@ -3,7 +3,7 @@ import { HoneyAPI } from "@/src/types/api";
 const apiUrl = `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api`;
 
 async function getHoneys() {
-  const url = `${apiUrl}/honeys`;
+  const url = `${apiUrl}/honeys?depth=1`;
   const response = await fetch(url);
   return await response.json();
 }

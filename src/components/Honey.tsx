@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import logoBio from "@/public/logo_bio.jpg";
 
 export default function Honey({
@@ -10,7 +10,7 @@ export default function Honey({
   flowers,
 }: {
   title: string;
-  picture: StaticImageData;
+  picture: string;
   pictureAlt: string;
   weight: string;
   price: string;

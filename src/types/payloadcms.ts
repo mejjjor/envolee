@@ -110,8 +110,8 @@ export interface Media {
 export interface Honey {
   id: number;
   title: string;
-  tag: string;
-  slug: string;
+  slug?: string | null;
+  picture: Media;
   description?: {
     root: {
       type: string;
@@ -127,7 +127,9 @@ export interface Honey {
     };
     [k: string]: unknown;
   } | null;
-  flowers?: (number | Flower)[] | null;
+  weight?: string | null;
+  price?: string | null;
+  flowers?: Flower[] | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -246,7 +248,10 @@ export interface MediaSelect<T extends boolean = true> {
 export interface HoneysSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
+  picture?: T;
   description?: T;
+  weight?: T;
+  price?: T;
   flowers?: T;
   updatedAt?: T;
   createdAt?: T;

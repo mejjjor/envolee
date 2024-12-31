@@ -45,17 +45,17 @@ const HoneysClient: FC<{
           .filter(
             (honey) =>
               currentFilter === "Toutes" ||
-              honey.flowers?.includes(currentFilter),
+              honey.flowers?.find((flower) => flower.name === currentFilter),
           )
           .map((honey) => (
             <Honey
               key={honey.id}
               title={honey.title}
-              picture={honey.picture}
-              pictureAlt={honey.pictureAlt}
-              weight={honey.weight}
-              price={honey.price}
-              flowers={honey.flowers}
+              picture={honey.picture.url ?? ""}
+              pictureAlt={honey.picture.alt}
+              weight={honey.weight ?? ""}
+              price={honey.price ?? ""}
+              flowers={honey.flowers?.map((flower) => flower.name) ?? []}
             />
           ))}
       </div>
